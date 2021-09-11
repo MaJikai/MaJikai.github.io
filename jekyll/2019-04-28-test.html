@@ -95,9 +95,52 @@
                     Fork it Now!
                 </a>
             </li> -->
+			<li>
+				<div class="search-container">
+					<input type="text" id="search-input" placeholder="search ...">
+					<ul id="results-container"></ul>
+				</div>
+			</li>
         </ul>
     </nav>
-</div><div class="book-body"><div class="body-inner">
+</div>
+
+<script src="/js/simple-jekyll-search.min.js"></script>
+
+<script>
+	window.simpleJekyllSearch = new SimpleJekyllSearch({
+	searchInput: document.getElementById('search-input'),
+	resultsContainer: document.getElementById('results-container'),
+	json: '/search.json',
+	searchResultTemplate: '<li><a href="{url}?query={query}" title="{desc}">{title}</a></li>',
+	noResultsText: 'No results found',
+	limit: 20,
+	fuzzy: false,
+  })
+</script>
+<style type="text/css">
+	#search-input {
+	    width: 90%;
+	    height: 35px;
+	    color: #333;
+	    background-color: rgba(227,231,236,.2);
+	    line-height: 35px;
+	    padding:0px 16px;
+	    border: 1px solid #c0c0c0;
+	    font-size: 16px;
+	    font-weight: bold;
+	    border-radius: 17px;
+	    outline: none;
+	    box-sizing: border-box;
+	    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(255, 255, 255, 0.6);
+	}
+	#search-input:focus {
+	    outline: none;
+	    border-color: rgb(102, 175, 233);
+	    background-color: #fff;
+	    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px #007fff;
+	}
+</style><div class="book-body"><div class="body-inner">
     <div class="book-header" role="navigation">
         <!-- Title -->
         <h1>
@@ -399,7 +442,7 @@ configuration in <code class="language-plaintext highlighter-rouge">_config.yml<
     },
     "gitbook": {
         "version": "3.2.3",
-        "time": "2021-09-10 20:11:59 +0800"
+        "time": "2021-09-11 22:16:29 +0800"
     },
     "basePath": "",
     "book": {
